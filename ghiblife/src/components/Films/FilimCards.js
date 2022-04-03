@@ -1,25 +1,22 @@
 import PropTypes from "prop-types";
-import "../../assets/css/Card.css";
 /*component to render Filim Cards.*/
-const FilimCards = ({ films }) => {
+const FilimCards = ({ id, title, director, image, release_date }) => {
   return (
-    <div className="card-deck">
-      {films &&
-        films.map((film) => (
-          <div className="card" key={film.id}>
-            <div className="card-body">
-              <h5 className="card-title">{film.title}</h5>
-              <img src={film.image} alt={film.title}></img>
-              <h4 className="card-title">{film.director}</h4>
-              <p className="card-text">{film.release_date}</p>
-            </div>
-          </div>
-        ))}
+    <div className="card" key={id}>
+      <div className="card-body">
+        <h5 className="card-title">{title}</h5>
+        <img src={image} alt={title}></img>
+        <h4 className="card-title">Producer: {director}</h4>
+        <p className="card-text">Year: {release_date}</p>
+      </div>
     </div>
   );
 };
 export default FilimCards;
 
 FilimCards.propTypes = {
-  films: PropTypes.array,
+  id: PropTypes.string,
+  title: PropTypes.string,
+  director: PropTypes.string,
+  release_date: PropTypes.string,
 };
