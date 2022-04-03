@@ -9,7 +9,6 @@ const SearchBar = ({ updateFilms, setFilms, films }) => {
   const handleChange = (e) => {
     setSearch(e.target.value);
 
-
     filter(e.target.value);
   };
   //compare name initial
@@ -47,7 +46,7 @@ const SearchBar = ({ updateFilms, setFilms, films }) => {
   };
 
   return (
-    <div className="containerInput">
+    <div className="auto">
       <button
         onClick={() => cancelSearch()}
         className={`cancel-btn ${search.length > 0 ? "active" : "inactive"}`}
@@ -55,13 +54,16 @@ const SearchBar = ({ updateFilms, setFilms, films }) => {
         X
       </button>
       <input
-        className="from-control inputBuscar"
+        className="search-bar"
         value={search}
         placeholder="Busqueda por Titulo"
         onChange={handleChange}
       />
+
+      {search.length > 0 ? (
+        <div className="search-results">{handleFilms()}</div>
+      ) : null}
       <button className="btn btn-success">Buscar</button>
-      {search.length > 0 ? <div>{handleFilms()}</div> : null}
     </div>
   );
 };

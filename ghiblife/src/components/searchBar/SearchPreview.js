@@ -2,15 +2,15 @@ import PropTypes from "prop-types";
 import "../../assets/css/Card.css";
 
 /*component to render Filim Cards.*/
-const SearchPreview = ({ index, title, setSearch}) => {
+const SearchPreview = ({ index, title, setSearch }) => {
   return (
     <div
       onClick={() => setSearch(title)}
       className={`search-preview ${index === 0 ? "start" : ""}`}
     >
-      <div key={index}>
+      <div key={index} className="first">
         <div>
-          <h5>{title}</h5>
+          <p className="name">{title}</p>
         </div>
       </div>
     </div>
