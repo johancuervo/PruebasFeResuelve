@@ -1,4 +1,4 @@
-const CollectionFilters = () => {
-  return "hola soy tu amigo";
+const CollectionFilter = () => {
+  return "HOLA MI NOMBRE ES FRILEJON";
 };
-export default CollectionFilters;
+export default CollectionFilter;
