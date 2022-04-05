@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import "../../assets/css/Card.css";
 
-/*component to render Filim Cards.*/
+/*component to render Collection Cards.*/
 const SearchPreview = ({ index, title, setSearch }) => {
   return (
     <div

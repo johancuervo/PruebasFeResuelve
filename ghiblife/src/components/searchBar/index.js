@@ -1,58 +1,18 @@
-import { useState } from "react";
 import PropTypes from "prop-types";
-import SearchPreview from "./SearchPreview";
+
 import "../../assets/css/SearchBar.css";
-const SearchBar = ({ updateFilms, setFilms, films }) => {
-  const [search, setSearch] = useState("");
-
+import { searchCollection } from "../../helpers/be_helper";
+const SearchBar = ({ search, setSearch, setCollections }) => {
   //change for event
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
     setSearch(e.target.value);
-
-    filter(e.target.value);
-  };
-  //compare name initial
-  const compareTitle = (title, search) => {
-    var keyLen = search.length;
-    title = title.toLowerCase().substring(0, keyLen);
-    if (search === "") return false;
-    return title === search.toLowerCase();
+    const resultCollection = await searchCollection(e.target.value);
+    setCollections(resultCollection);
   };
   console.log(search);
-  //filter Names
-  const filter = (searchTerm) => {
-    let resultSearch = updateFilms.filter((element) => {
-      if (
-        element.title
-          .toString()
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase()) &&
-        compareTitle(element.title, searchTerm) === true
-      ) {
-        return element;
-      }
-      return false;
-    });
-    setFilms(resultSearch);
-  };
-  const cancelSearch = () => {
-    setSearch("");
-  };
-  const handleFilms = () => {
-    const filmsResult = films.map(({ title }, index) => {
-      return <SearchPreview title={title} key={index} setSearch={setSearch} />;
-    });
-    return filmsResult;
-  };
 
   return (
     <div className="auto">
-      <button
-        onClick={() => cancelSearch()}
-        className={`cancel-btn ${search.length > 0 ? "active" : "inactive"}`}
-      >
-        X
-      </button>
       <input
         className="search-bar"
         value={search}
@@ -60,9 +20,6 @@ const SearchBar = ({ updateFilms, setFilms, films }) => {
         onChange={handleChange}
       />
 
-      {search.length > 0 ? (
-        <div className="search-results">{handleFilms()}</div>
-      ) : null}
       <button className="btn btn-success">Buscar</button>
     </div>
   );
@@ -70,7 +27,9 @@ const SearchBar = ({ updateFilms, setFilms, films }) => {
 export default SearchBar;
 
 SearchBar.propTypes = {
-  updateFilms: PropTypes.array,
-  setUpdateFilms: PropTypes.func,
-  films: PropTypes.array,
+  collections: PropTypes.array,
+  search: PropTypes.string,
+  setSearch: PropTypes.func,
+  setCollections: PropTypes.func,
+  handleCollection: PropTypes.func,
 };
