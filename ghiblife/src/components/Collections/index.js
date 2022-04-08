@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import { searchCollection } from "../../helpers/be_helper";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-import "../../assets/css/Card.css";
 import CollectionsCards from "./CollectionsCards";
 import SearchBar from "../searchBar";
+import CollectionCardModal from "../ModalCards/CollectionCardModal";
 
 /*Component the list Collection*/
 
 const CollectionList = () => {
   const [collections, setCollections] = useState([]);
   const [search, setSearch] = useState("");
+  const [toggleModal, setToggleModal] = useState(false);
+  const [seletedCollection, setSeletedCollection] = useState(false);
 
   const getCollection = async () => {
     const collections = await searchCollection();
@@ -30,22 +31,25 @@ const CollectionList = () => {
         setCollections={setCollections}
       />
       {
-        <div className="card-deck">
-          {collections.length &&
-            collections.map(
-              ({ title, primaryimageurl, objectnumber, images }, index) => {
-                return images?.length > 0 ? (
-                  <CollectionsCards
-                    key={index}
-                    title={title}
-                    primaryimageurl={primaryimageurl}
-                    objectnumber={objectnumber}
-                  />
-                ) : null;
-              }
-            )}
+        <div className="card-decking">
+          {collections
+            ?.filter((collection) => collection.primaryimageurl)
+            ?.map((collection, index) => (
+              <CollectionsCards
+                key={index}
+                collection={collection}
+                setSeletedCollection={setSeletedCollection}
+                setToggleModal={setToggleModal}
+              />
+            ))}
         </div>
       }
+      {toggleModal && (
+        <CollectionCardModal
+          setToggleModal={setToggleModal}
+          seletedCollection={seletedCollection}
+        />
+      )}
     </div>
   );
 };
