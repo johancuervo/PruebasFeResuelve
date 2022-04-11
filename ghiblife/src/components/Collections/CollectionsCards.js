@@ -9,7 +9,6 @@ const CollectionsCards = ({
   <div
     className="card after:content-[''] before:content-['']"
     onClick={() => {
-      console.log({ collection });
       setToggleModal(true);
       setSeletedCollection(collection);
     }}

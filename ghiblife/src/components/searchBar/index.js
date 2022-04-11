@@ -2,18 +2,18 @@ import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 
 import "../../assets/css/SearchBar.css";
-import { searchCollection } from "../../helpers/be_helper";
-const SearchBar = ({ search, setSearch, setCollections }) => {
+
+const SearchBar = ({ search, setSearch }) => {
   const navigate = useNavigate();
 
   //change for event
   const handleChange = async (e) => {
     setSearch(e.target.value);
-    const resultCollection = await searchCollection(e.target.value);
-    navigate(`?q=${e.target.value}`);
-    setCollections(resultCollection);
+    navigate(`/collection/${e.target.value}`);
+    if (!e.target.value) {
+      navigate("/#");
+    }
   };
-  /* console.log(search); */
 
   return (
     <div className="auto">
