@@ -1,15 +1,11 @@
 import PropTypes from "prop-types";
 
 /*component to render Filim Cards.*/
-const CollectionsCards = ({
-  collection,
-  setSeletedCollection,
-  setToggleModal,
-}) => (
+const CollectionsCards = ({ collection, setSeletedCollection, setModal }) => (
   <div
     className="card after:content-[''] before:content-['']"
     onClick={() => {
-      setToggleModal(true);
+      setModal(true);
       setSeletedCollection(collection);
     }}
   >
@@ -32,6 +28,6 @@ CollectionsCards.propTypes = {
     title: PropTypes.string,
     objectnumber: PropTypes.string,
   }),
-  setToggleModal: PropTypes.func,
+  setModal: PropTypes.func,
   setSeletedCollection: PropTypes.func,
 };

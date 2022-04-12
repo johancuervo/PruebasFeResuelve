@@ -32,11 +32,31 @@ const Navbar = () => {
           </button>
           <div className="hidden w-full md:block md:w-auto" id="mobile-menu">
             <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-xl md:font-medium">
-              <Link to="/#">Inicio</Link>
-              <Link to="/collection/armor">Armaduras</Link>
-              <Link to="/collection/Imperial">Fotografia Imperial</Link>
-              <Link to="collection/colombia">Colombia</Link>
-              <Link to="collection/mexico">Mexico</Link>
+              <Link to="/#" className=" focus-within:text-blue-700">Inicio</Link>
+              <Link
+                to="/collection/armor"
+                className=" focus-within:text-blue-700"
+              >
+                Armaduras
+              </Link>
+              <Link
+                to="/collection/Imperial"
+                className=" focus-within:text-blue-700"
+              >
+                Fotografia Imperial
+              </Link>
+              <Link
+                to="collection/colombia"
+                className=" focus-within:text-blue-700"
+              >
+                Colombia
+              </Link>
+              <Link
+                to="collection/mexico"
+                className=" focus-within:text-blue-700"
+              >
+                Mexico
+              </Link>
             </ul>
           </div>
         </div>

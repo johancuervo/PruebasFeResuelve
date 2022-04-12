@@ -10,9 +10,8 @@ const useCollections = (keyword) => {
   const [pageCollection, setPage] = useState(DEFAULT_PAGE);
 
   const getNewPage = () => setPage((prevState) => prevState + DEFAULT_PAGE);
-  console.log(recordsCollection);
 
-  const emptySetRecordsCollection = () => setRecordsCollection([]);
+
 
   const getCollection = async () => {
     const { records } = await listCollection({
@@ -20,6 +19,7 @@ const useCollections = (keyword) => {
       page: pageCollection,
       size: DEFAULT_SIZE,
     });
+
     if (records === 0) {
       setRecordsCollection(records);
     } else {
@@ -32,7 +32,7 @@ const useCollections = (keyword) => {
   const getCollectionByKeyword = async () => {
     const { records } = await listCollection({
       keyword,
-      page: pageCollection,
+      page: 1,
       size: DEFAULT_SIZE,
     });
     setRecordsCollection([...records]);
@@ -44,12 +44,12 @@ const useCollections = (keyword) => {
     getCollection();
   }, [keyword, pageCollection]);
 
-  useEffect(() => {
+ useEffect(() => {
     setLoading(true);
     getCollectionByKeyword();
-  }, [keyword]);
+  }, [keyword]); 
 
-  return { loading, recordsCollection, getNewPage, emptySetRecordsCollection };
+  return { loading, recordsCollection, getNewPage, setRecordsCollection };
 };
 
 export default useCollections;

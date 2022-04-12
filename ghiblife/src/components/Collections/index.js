@@ -13,15 +13,18 @@ const CollectionList = () => {
   const { keyword } = useParams();
 
   const [search, setSearch] = useState("");
-  const [toggleModal, setToggleModal] = useState(false);
+  const [modal, setModal] = useState(false);
   const [seletedCollection, setSeletedCollection] = useState(false);
   const { loading, recordsCollection, getNewPage } = useCollections(keyword);
+  const toggle = () => {
+    setModal(!modal);
+  };
 
   return (
     <div>
       {<SearchBar search={search} setSearch={setSearch} />}
       {
-        <div className="card-decking">
+        <div className="card-decking px-11">
           {recordsCollection
             ?.filter((collection) => collection.primaryimageurl)
             ?.map((collection, index) => (
@@ -29,15 +32,15 @@ const CollectionList = () => {
                 key={index}
                 collection={collection}
                 setSeletedCollection={setSeletedCollection}
-                setToggleModal={setToggleModal}
+                setModal={setModal}
               />
             ))}
         </div>
       }
       {loading && <PuffLoader />}
-      {toggleModal && (
+      {modal && (
         <CollectionCardModal
-          setToggleModal={setToggleModal}
+          toggle={toggle}
           seletedCollection={seletedCollection}
         />
       )}
