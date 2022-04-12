@@ -5,6 +5,7 @@ module.exports = {
     amd: true,
     node: true,
   },
+  testEnvironment: 'node',
   extends: ["plugin:react/recommended", "eslint:recommended"],
   parserOptions: {
     ecmaFeatures: {

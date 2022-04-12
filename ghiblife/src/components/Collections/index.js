@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { PuffLoader } from "react-spinners";
 import "bootstrap/dist/css/bootstrap.min.css";
-import CollectionsCards from "./CollectionsCards";
+import CollectionsCard from "./CollectionsCard";
 import CollectionCardModal from "../ModalCards/CollectionCardModal";
 import useCollections from "../../hooks/useCollections";
 import { useParams } from "react-router-dom";
@@ -28,7 +28,7 @@ const CollectionList = () => {
           {recordsCollection
             ?.filter((collection) => collection.primaryimageurl)
             ?.map((collection, index) => (
-              <CollectionsCards
+              <CollectionsCard
                 key={index}
                 collection={collection}
                 setSeletedCollection={setSeletedCollection}

@@ -11,8 +11,6 @@ const useCollections = (keyword) => {
 
   const getNewPage = () => setPage((prevState) => prevState + DEFAULT_PAGE);
 
-
-
   const getCollection = async () => {
     const { records } = await listCollection({
       keyword,

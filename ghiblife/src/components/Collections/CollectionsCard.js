@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 /*component to render Filim Cards.*/
-const CollectionsCards = ({ collection, setSeletedCollection, setModal }) => (
+const CollectionsCard = ({ collection, setSeletedCollection, setModal }) => (
   <div
     className="card after:content-[''] before:content-['']"
     onClick={() => {
@@ -19,9 +19,9 @@ const CollectionsCards = ({ collection, setSeletedCollection, setModal }) => (
   </div>
 );
 
-export default CollectionsCards;
+export default CollectionsCard;
 
-CollectionsCards.propTypes = {
+CollectionsCard.propTypes = {
   collection: PropTypes.shape({
     id: PropTypes.number,
     primaryimageurl: PropTypes.string,
