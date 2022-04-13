@@ -24,7 +24,7 @@ const CollectionList = () => {
     <div>
       {<SearchBar search={search} setSearch={setSearch} />}
       {
-        <div className="card-decking px-11">
+        <div className="card-decking pr-9 pl-5 sm:px-10">
           {recordsCollection
             ?.filter((collection) => collection.primaryimageurl)
             ?.map((collection, index) => (
