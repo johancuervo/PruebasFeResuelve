@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 //  https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/react/modals/regular
 const CollectionCardModal = ({ toggle, seletedCollection }) => {
   return (
-    <div id="modal-component-container" className="fixed inset-0">
+    <div id="modal-component-container" className="fixed inset-0 animate-wiggle">
       <div
         id="modal-flex-container"
         className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"

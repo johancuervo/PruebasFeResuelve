@@ -7,7 +7,9 @@ const Navbar = () => {
     <div>
       <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
         <div className="container flex flex-wrap justify-between items-center mx-auto">
-          <img src="" />
+          <img 
+          src="https://lh3.googleusercontent.com/U-ZixYsCPDEMXulqbw7c0u5RW-ysjO__mgWT6SqIH9GUw1cr2qxO6i19qOcnCx7YyFo1Tuo2YGFxP7DoBhsBpHEsrQD2Dz6itO7oZzZBTQZbI8c1wL5E_yxEuutU_smOzE_-n2uf5CaS4feGCnuvbN1eXsEo_vKyz-ygzOgkVz-388-tT_f4OQ1NeCVNnC7nTu9YUyDSCHvzS3RtdQJLKBFOwjX1Cq0Es9V9IhvriG-uHltXp0CUx5SGvum7sPJE3SsDBMUmhaceed0kZNGH1UGaMNyO31EqGCozJHAREbcH8Xrx9xGqs8GMU9_ZTJU9q_cdE2GzPIwrKnELPFIvaACYjUxOlQfzYUHU_vzBrkfSGZBiKhey19-M6t-WUQpd1s4beA1cVEZZFJn7UUaP03Yt2LhGHXNAW5nYfNVLvq6zL55WV7FsWQJobWNO3YqXRM743RDLAisWWUNTnAUCTGjaCWuoDUp6MjIPOwwtpOl5xtoqwmd7QYNPpmoCcq3UYbeUZ4OIi9dv-p89QR9zTa7MpSlz2b-rwDuDGqWkKUcsvc1fRew9nxQdSDuzrNP9bUg7BNtkOaObF9g27WnQa4iXbQmA8hMxfcGlBbEM_VMNzPdkByNvdQKxTBoUOHTXR5pfZlhVBbdZXytpMvH9xVzpGm8U3OX7pWXawIp261vyzbB-htZRGdZuhX0cx8H0Pn4FK99KxJEyqCHykHjzkvuzBxBdcndzQo29DdwuojCgZcRrwDH3LS0jkEmc=w314-h126-no?authuser=0" 
+          />
           <button
             data-collapse-toggle="mobile-menu"
             type="button"
@@ -44,7 +46,8 @@ const Navbar = () => {
           </button>
           <div
             className={
-              "w-full md:block md:w-auto " + (navbarOpen ? " flex justify-end" : " hidden")
+              "w-full md:block md:w-auto " +
+              (navbarOpen ? " flex justify-end" : " hidden")
             }
             id="mobile-menu"
           >

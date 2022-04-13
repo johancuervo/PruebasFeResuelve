@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { listCollection } from "../helpers/be_helper";
 //custom hook to recibe the collections either by filter or pagination 
-const useCollections = (keyword) => {
+const useCollections = (keyword="") => {
   const DEFAULT_PAGE = 1;
   const DEFAULT_SIZE = 12;
 
@@ -47,7 +47,7 @@ const useCollections = (keyword) => {
     getCollectionByKeyword();
   }, [keyword]); 
 
-  return { loading, recordsCollection, getNewPage, setRecordsCollection };
+  return { loading, recordsCollection, getNewPage };
 };
 
 export default useCollections;
