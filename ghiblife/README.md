@@ -1,4 +1,4 @@
-# Create Aplication whit infinite scroll:
+# Create Aplication with infinite scroll:
 
 ### Target: 
 create an application that allows you to see the works of the Harvard museum
