@@ -1,8 +1,8 @@
-# Create Aplication whit infinite scroll:
+# Create Aplication with infinite scroll:
 
 ### Target: 
 create an application that allows you to see the works of the Harvard museum
-### result:
+### Result:
 I created an application that contains the galleries of the Harvard museum with a search engine that automatically filters according to the search criteria and with an infinite scroll controlled by a button that brings us a certain number of records from the gallery.
 ## Link code like
 
