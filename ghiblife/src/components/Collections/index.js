@@ -2,7 +2,7 @@ import { useState } from "react";
 import { PuffLoader } from "react-spinners";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CollectionsCard from "./CollectionsCard";
-import CollectionCardModal from "../ModalCards/CollectionCardModal";
+import CollectionCardModal from "../CollectionCardModal";
 import useCollections from "../../hooks/useCollections";
 import { useParams } from "react-router-dom";
 import SearchBar from "../searchBar";
@@ -37,15 +37,24 @@ const CollectionList = () => {
             ))}
         </div>
       }
-      {loading && <PuffLoader />}
+      <div className="flex flex-col items-center justify-center">
+        {loading && <PuffLoader />}
+      </div>
+
       {modal && (
         <CollectionCardModal
           toggle={toggle}
           seletedCollection={seletedCollection}
         />
       )}
-
-      <button onClick={getNewPage}>cargar mas</button>
+      <div className="flex flex-col items-center justify-center">
+        <button
+          className=" bg-black hover:bg-black-700 text-white font-bold py-2 px-4 mt-4 rounded"
+          onClick={getNewPage}
+        >
+          cargar mas
+        </button>
+      </div>
     </div>
   );
 };

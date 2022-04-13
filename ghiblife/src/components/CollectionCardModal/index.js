@@ -24,7 +24,7 @@ const CollectionCardModal = ({ toggle, seletedCollection }) => {
             id="modal-wrapper"
             className="bg-white px-4 pt-0 pb-4 sm:p-6 sm:pb-4 text-right"
           >
-            <button onClick={() => toggle()} className="" alt-text="close">
+            <button onClick={() => toggle()} className="" test-id="close">
               X
             </button>
             <div id="modal-wraper-flex" className="sm:flex sm:items-start">
