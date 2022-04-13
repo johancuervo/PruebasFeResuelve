@@ -4,8 +4,9 @@ module.exports = {
     es2021: true,
     amd: true,
     node: true,
+    "jest/globals": true,
   },
-  testEnvironment: 'node',
+
   extends: ["plugin:react/recommended", "eslint:recommended"],
   parserOptions: {
     ecmaFeatures: {
@@ -14,9 +15,15 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react"],
+  plugins: ["react", "jest"],
+
   rules: {
     "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
     "react/react-in-jsx-scope": "off",
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error",
   },
 };
