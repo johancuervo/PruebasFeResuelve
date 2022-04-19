@@ -15,7 +15,7 @@ const SearchBar = ({ search, setSearch }) => {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <input
+      <input 
         className="shadow appearance-none border rounded w-auto py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         value={search}
         placeholder="Busqueda por Titulo"

@@ -2,7 +2,6 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import useCollections from "../useCollections";
 const loadingMock = true;
 
-
 test("should change loading", () => {
   const { result } = renderHook(() => useCollections());
   act(() => {
@@ -11,5 +10,3 @@ test("should change loading", () => {
 
   expect((result.loading = loadingMock)).toBe(true);
 });
-
-

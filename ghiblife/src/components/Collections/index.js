@@ -22,21 +22,21 @@ const CollectionList = () => {
 
   return (
     <div>
-      {<SearchBar search={search} setSearch={setSearch} />}
-      {
-        <div className="card-decking px-3 sm:px-10">
-          {recordsCollection
-            ?.filter((collection) => collection.primaryimageurl)
-            ?.map((collection, index) => (
-              <CollectionsCard
-                key={index}
-                collection={collection}
-                setSeletedCollection={setSeletedCollection}
-                setModal={setModal}
-              />
-            ))}
-        </div>
-      }
+      <SearchBar search={search} setSearch={setSearch} />
+
+      <div className="card-decking px-3 sm:px-10">
+        {recordsCollection
+          ?.filter((collection) => collection.primaryimageurl)
+          ?.map((collection, index) => (
+            <CollectionsCard
+              key={index}
+              collection={collection}
+              setSeletedCollection={setSeletedCollection}
+              setModal={setModal}
+            />
+          ))}
+      </div>
+
       <div className="flex flex-col items-center justify-center">
         {loading && <PuffLoader />}
       </div>

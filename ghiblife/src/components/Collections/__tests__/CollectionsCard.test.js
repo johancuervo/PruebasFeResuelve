@@ -28,7 +28,7 @@ describe("CollectionCard component tests", () => {
   });
 
   test("it should select the current collection", () => {
-    const { getByText} = render(
+    const { getByText } = render(
       <CollectionsCard
         collection={mockCollection}
         setModal={setModalMocked}
