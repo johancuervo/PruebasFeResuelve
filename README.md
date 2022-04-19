@@ -10,14 +10,14 @@ REACT_APP_APIKEY=(This apikey this must request in this url: https://docs.google
 ### Run TEST
 for run test execute in the folder  ghiblife npm run test
 ### Library Select
-React axios: I select this library for the organization ,security and request times.
-Tailwind CSS: this library is agile and optimized times in the moment to create styles in css
-Proptypes:dinamic and easy method use the components
-react-router-dom: easy work to me to apply in the proyect
-react-spinners: for its variety of spinners 
-testing-library: for its interaction with DOM
-testing-react-hooks: agility  to test hooks
-eslint: control in the syntaxis errors.
+#### React axios: I select this library for the organization ,security and request times.
+#### Tailwind CSS: this library is agile and optimized times in the moment to create styles in css
+#### Proptypes:dinamic and easy method use the components
+#### react-router-dom: easy work to me to apply in the proyect
+#### react-spinners: for its variety of spinners 
+#### testing-library: for its interaction with DOM
+#### testing-react-hooks: agility  to test hooks
+#### eslint: control in the syntaxis errors.
 ### Target: 
 create an application that allows you to see the works of the Harvard museum
 ### Result:
